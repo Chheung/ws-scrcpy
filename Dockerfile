@@ -7,13 +7,13 @@ RUN apk update && \
 COPY package.json package-lock.json ./
 RUN yarn install
 COPY . .
-RUN yarn build
+RUN npm build
 
 FROM node:16-alpine AS production
 WORKDIR /app
 
 COPY package.json yarn.lock ./
-RUN yarn install --production
+RUN npm install --production
 COPY --from=builder ./builder/dist ./dist
 
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
