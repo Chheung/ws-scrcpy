@@ -5,7 +5,8 @@ ARG SCRCPY_VER=1.16
 ARG SERVER_HASH="94a79e05b4498d0460ab7bd9d12cbf05156e3a47bf0c5d1420cee1d4493b3832"
 
 RUN apk add --no-cache \
-        node \
+        nodejs \
+        npm \
         yarn \
         curl \
         ffmpeg-dev \
