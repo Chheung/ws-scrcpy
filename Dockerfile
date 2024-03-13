@@ -2,7 +2,7 @@ FROM node:18.12-alpine AS builder
 
 WORKDIR /builder
 RUN apk update && \
-    apk add scrcpy
+    apk add scrcpy make
 
 COPY package.json package-lock.json ./
 RUN yarn install
